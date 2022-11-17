@@ -1,0 +1,113 @@
+26689062411869
+Keyless_Door
+1X02
+<b>PIN HEADER</b>
+
+0
+2
+2
+Keyless_Door
+1X03
+<b>PIN HEADER</b>
+
+0
+3
+3
+Keyless_Door
+1X04
+<b>PIN HEADER</b>
+
+0
+4
+4
+Keyless_Door
+1X06
+<b>PIN HEADER</b>
+
+0
+6
+6
+Keyless_Door
+2X03
+<b>PIN HEADER</b>
+
+0
+6
+6
+Keyless_Door
+C0805K
+<b>Ceramic Chip Capacitor KEMET 0805 reflow solder</b><p>{return}Metric Code Size 2012
+
+0
+2
+2
+Keyless_Door
+CHIP-LED0805
+<b>Hyper CHIPLED Hyper-Bright LED</b><p>{return}LB R99A<br>{return}Source: http://www.osram.convergy.de/ ... lb_r99a.pdf
+
+0
+2
+2
+Keyless_Door
+DIL28-3
+<B>Dual In Line</B> 0.3 inch
+
+0
+28
+28
+Keyless_Door
+HC49UP
+<h3>HC-49/UP 11.4x4.8mm SMD Crystal</h3>{return}<p><a href="http://www.standardcrystalcorp.com/pdf%5Cc-3.pdf">Example Datasheet</a></p>
+
+0
+2
+2
+Keyless_Door
+MODULE_A4988_STEPPER_MOTOR_DRIVER_CARRIER
+
+
+0
+16
+16
+Keyless_Door
+P1-13
+<b>TEST PAD</b>
+
+0
+1
+1
+Keyless_Door
+POWER_JACK_PTH
+<h3>DC Barrel Power Jack/Connector PTH</h3>{return}5.5mm jack, 2.1mm center pole diameter{return}<p>Specifications:{return}<ul><li>Pin count: 3</li>{return}</ul></p>{return}<p><a href=”https://www.sparkfun.com/datasheets/Prototyping/Barrel-Connector-PJ-202A.pdf”>Datasheet referenced for footprint</a></p>{return}<p>Example device(s):{return}<ul><li>POWER_JACK</li>{return}</ul></p>
+
+0
+3
+3
+Keyless_Door
+R0805
+<b>RESISTOR</b><p>
+
+0
+2
+2
+Keyless_Door
+SMB
+<B>DIODE</B>
+
+0
+2
+2
+Keyless_Door
+STAND-OFF
+<h3>Standoff (#4 Screw)</h3>{return}<p>This is the mechanical footprint for a #4 phillips button head screw. Use the keepout ring to avoid running the screw head into surrounding components.</p>{return}<h4>Devices Using</h4>{return}<ul><li>STAND-OFF</li></ul>
+
+0
+0
+0
+Keyless_Door
+TACTILE_SWITCH_SMD
+
+
+0
+4
+4
