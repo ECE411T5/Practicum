@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2022-10-29" view-index="0" gantt-divider-location="351" resource-divider-location="300" version="3.2.3230" locale="en_US">
+<?xml version="1.0" encoding="UTF-8"?><project name="ECE411 Practicum Project" company="Portland State University" webLink="http://github.com/ECE411T5/Practicum" view-date="2022-10-31" view-index="0" gantt-divider-location="351" resource-divider-location="300" version="3.2.3230" locale="en_US">
     <description/>
     <view zooming-state="default:2" id="gantt-chart">
         <field id="tpd3" name="Name" width="200" order="0"/>
@@ -6,15 +6,15 @@
         <field id="tpd5" name="End date" width="75" order="2"/>
         <option id="filter.completedTasks" value="false"/>
         <timeline>
-            <![CDATA[0]]>
+            <![CDATA[17,12,0,13,6]]>
         </timeline>
         <option id="color.recent">
-            <![CDATA[#ff3333 #3333ff #000000 #00ff00 #00ffff #ff9966 #ff6666]]>
+            <![CDATA[#00ff00 #000000 #ff3333 #ff9966 #3333ff #00ffff #ff6666]]>
         </option>
     </view>
     <view id="resource-table">
-        <field id="0" name="Name" width="210" order="0"/>
-        <field id="1" name="Default role" width="86" order="1"/>
+        <field id="0" name="Name" width="206" order="0"/>
+        <field id="1" name="Default role" width="90" order="1"/>
     </view>
     <!-- -->
     <calendars>
@@ -40,28 +40,67 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="0" name="Set Gantt Chart" color="#00ff00" meeting="false" start="2022-10-31" duration="1" complete="0" thirdDate="2022-10-31" thirdDate-constraint="0" expand="true"/>
-        <task id="1" name="Breadboard Prototype" color="#3333ff" meeting="false" start="2022-11-01" duration="3" complete="0" thirdDate="2022-10-31" thirdDate-constraint="0" expand="true"/>
-        <task id="2" name="Updated Schematic and Layout" color="#ff6666" meeting="false" start="2022-11-02" duration="2" complete="0" thirdDate="2022-10-31" thirdDate-constraint="0" expand="true"/>
-        <task id="3" name="Finalize BOM" color="#00ffff" meeting="false" start="2022-11-04" duration="5" complete="0" thirdDate="2022-10-31" thirdDate-constraint="0" expand="true"/>
-        <task id="4" name="CAD draft" color="#ff6666" meeting="false" start="2022-11-07" duration="3" complete="0" thirdDate="2022-10-31" thirdDate-constraint="0" expand="true"/>
-        <task id="6" name="Functional Decomposition" color="#ff9966" meeting="false" start="2022-11-08" duration="2" complete="0" thirdDate="2022-10-28" thirdDate-constraint="0" expand="true"/>
-        <task id="5" name="Order missing parts for BOM" color="#000000" meeting="false" start="2022-11-08" duration="4" complete="0" thirdDate="2022-10-28" thirdDate-constraint="0" expand="true"/>
-        <task id="9" name="CAD finalized" color="#ff3333" meeting="false" start="2022-11-14" duration="3" complete="0" thirdDate="2022-10-28" thirdDate-constraint="0" priority="2" expand="true"/>
-        <task id="10" name="Verify all parts recieved" color="#00ffff" meeting="false" start="2022-11-15" duration="5" complete="0" thirdDate="2022-10-28" thirdDate-constraint="0" expand="true"/>
-        <task id="15" name="3d Print Enclosure" color="#3333ff" meeting="false" start="2022-11-16" duration="6" complete="0" thirdDate="2022-10-31" thirdDate-constraint="0" expand="true"/>
-        <task id="7" name="Design Review" color="#ff3333" meeting="false" start="2022-11-16" duration="2" complete="0" thirdDate="2022-10-28" thirdDate-constraint="0" priority="4" expand="true"/>
-        <task id="8" name="Send PCB design to lab" color="#ff6666" meeting="false" start="2022-11-17" duration="1" complete="0" thirdDate="2022-10-28" thirdDate-constraint="0" priority="4" expand="true"/>
-        <task id="13" name="Construct Circuit" color="#00ff00" meeting="false" start="2022-11-21" duration="5" complete="0" thirdDate="2022-10-28" thirdDate-constraint="0" priority="2" expand="true"/>
-        <task id="11" name="Test plan design" color="#000000" meeting="false" start="2022-11-22" duration="6" complete="0" thirdDate="2022-10-28" thirdDate-constraint="0" expand="true"/>
-        <task id="12" name="Test project" color="#3333ff" meeting="false" start="2022-12-01" duration="3" complete="0" thirdDate="2022-10-28" thirdDate-constraint="0" expand="true"/>
+        <task id="0" name="Set Gantt Chart" color="#000000" meeting="false" start="2022-10-31" duration="1" complete="100" thirdDate="2022-10-31" thirdDate-constraint="0" expand="true"/>
+        <task id="1" name="Breadboard Prototype" color="#3333ff" meeting="false" start="2022-11-01" duration="3" complete="100" thirdDate="2022-10-31" thirdDate-constraint="0" expand="true"/>
+        <task id="2" name="Updated Schematic and Layout" color="#00ff00" meeting="false" start="2022-11-02" duration="2" complete="100" thirdDate="2022-10-31" thirdDate-constraint="0" expand="true"/>
+        <task id="16" name="Rough Programming" color="#8cb6ce" meeting="false" start="2022-11-03" duration="7" complete="100" thirdDate="2022-10-20" thirdDate-constraint="0" expand="true">
+            <depend id="17" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="3" name="Finalize BOM" color="#ff9966" meeting="false" start="2022-11-03" duration="4" complete="80" thirdDate="2022-10-31" thirdDate-constraint="0" expand="true">
+            <depend id="5" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="4" name="CAD draft" color="#3333ff" meeting="false" start="2022-11-07" duration="3" complete="100" thirdDate="2022-10-31" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Draft looks good.
+Design Review went well. ]]>
+            </notes>
+            <depend id="9" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="6" name="Functional Decomposition" color="#00ff00" meeting="false" start="2022-11-08" duration="2" complete="100" thirdDate="2022-10-28" thirdDate-constraint="0" expand="true"/>
+        <task id="5" name="Order missing parts for BOM" color="#ff9966" meeting="false" start="2022-11-09" duration="2" complete="100" thirdDate="2022-10-28" thirdDate-constraint="0" expand="true"/>
+        <task id="17" name="Finalize programming" color="#8cb6ce" meeting="false" start="2022-11-14" duration="6" complete="100" thirdDate="2022-10-20" thirdDate-constraint="0" priority="2" expand="true">
+            <notes>
+                <![CDATA[FInal code uploaded
+]]>
+            </notes>
+        </task>
+        <task id="9" name="CAD finalized" color="#3333ff" meeting="false" start="2022-11-10" duration="3" complete="100" thirdDate="2022-10-28" thirdDate-constraint="0" priority="2" expand="true">
+            <depend id="15" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="10" name="Verify all parts recieved" color="#ff9966" meeting="false" start="2022-11-15" duration="5" complete="85" thirdDate="2022-10-28" thirdDate-constraint="0" expand="true"/>
+        <task id="15" name="3d Print Enclosure" color="#3333ff" meeting="false" start="2022-11-15" duration="6" complete="100" thirdDate="2022-10-31" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Late.  
+Got final print 12/6]]>
+            </notes>
+        </task>
+        <task id="7" name="Design Review" color="#ff3333" meeting="false" start="2022-11-16" duration="2" complete="100" thirdDate="2022-10-28" thirdDate-constraint="0" priority="4" expand="true"/>
+        <task id="8" name="Send PCB design to lab" color="#00ff00" meeting="false" start="2022-11-17" duration="1" complete="100" thirdDate="2022-10-28" thirdDate-constraint="0" priority="4" expand="true"/>
+        <task id="13" name="Construct Circuit" color="#3333ff" meeting="false" start="2022-11-21" duration="5" complete="90" thirdDate="2022-10-28" thirdDate-constraint="0" priority="2" expand="true">
+            <notes>
+                <![CDATA[PCB came in late.  Could not start constructing on time.
+Issues with construction.  Power supply adaptor missing.]]>
+            </notes>
+            <depend id="12" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="11" name="Test plan design" color="#ff3333" meeting="false" start="2022-11-22" duration="6" complete="100" thirdDate="2022-10-28" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Documentation on Github for test plans]]>
+            </notes>
+            <depend id="12" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="12" name="Test project" color="#00ff00" meeting="false" start="2022-11-30" duration="5" complete="50" thirdDate="2022-10-28" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Troubleshooting issues with implementing ATMega328 on PCB.   MIcrocontroller works on Arduino,but does not transfer to board well.]]>
+            </notes>
+        </task>
         <task id="14" name="Final Presentation" color="#ff3333" meeting="false" start="2022-12-07" duration="2" complete="0" thirdDate="2022-10-28" thirdDate-constraint="0" priority="4" expand="true"/>
     </tasks>
     <resources>
-        <resource id="0" name="Joshua Hobby" function="Default:0" contacts="hobby@pdx.edu" phone=""/>
-        <resource id="1" name="Mohamed Ghonim" function="Default:0" contacts="" phone=""/>
-        <resource id="2" name="Ibrahim Binmahfood" function="Default:0" contacts="" phone=""/>
-        <resource id="3" name="Mohamed Ashkanani" function="Default:0" contacts="" phone=""/>
+        <resource id="0" name="Joshua Hobby" function="Default:1" contacts="hobby@pdx.edu" phone=""/>
+        <resource id="1" name="Mohamed Ghonim" function="Default:1" contacts="" phone=""/>
+        <resource id="2" name="Ibrahim Binmahfood" function="Default:1" contacts="" phone=""/>
+        <resource id="3" name="Mohamed Ashkanani" function="Default:1" contacts="" phone=""/>
     </resources>
     <allocations>
         <allocation task-id="0" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
@@ -72,13 +111,19 @@
         <allocation task-id="13" resource-id="0" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="11" resource-id="0" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="12" resource-id="0" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="6" resource-id="0" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="16" resource-id="0" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="17" resource-id="0" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="2" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="14" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="5" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
-        <allocation task-id="10" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="7" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="11" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="12" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="6" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="9" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="8" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="17" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="1" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="4" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="14" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
@@ -88,6 +133,7 @@
         <allocation task-id="11" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="15" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="12" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="6" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="3" resource-id="3" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="14" resource-id="3" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="5" resource-id="3" function="Default:0" responsible="false" load="100.0"/>
@@ -95,6 +141,8 @@
         <allocation task-id="7" resource-id="3" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="11" resource-id="3" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="12" resource-id="3" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="6" resource-id="3" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="17" resource-id="3" function="Default:0" responsible="false" load="100.0"/>
     </allocations>
     <vacations/>
     <previous/>
