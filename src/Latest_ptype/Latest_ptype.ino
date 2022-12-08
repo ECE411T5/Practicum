@@ -1,13 +1,21 @@
-/*
+/* Team 5:  Mohamed Ghonim
+ *          Joshua Hobby
+ *          Mohamed Ashkanani
+ *          Ibrahim Binmahfood
  * 
- *NOTE: status_btn which is output from UNLOCK_BTN pin on PCB is 
+ * Inspiration:
+ * https://github.com/camdeno/ECE-411-Team-5
+ * 
+ * NOTE: status_btn which is output from UNLOCK_BTN pin on PCB is 
  * supposed to be a pull down resistor rather than pull up.
- *
  */
-#include <LiquidCrystal_I2C.h> // Frank de Brabander's v1.1.2
+ 
+#include <LiquidCrystal_I2C.h> // Frank de Brabander's LiquidCrystal_I2C v1.1.2
 #include <Keypad.h>
 
 #define STEPS_PER_REV 200
+#define STEPS_REQ     65
+#define M_SPEED       2000
 
 // Connected to PD2 and PD3
 #define DIR           2
@@ -29,7 +37,7 @@
 
 // LCD I2C Address: 0x27 from datasheet
 #define LCD_I2C_ADD 0x27
-
+  
 // The formatting of 4x4 Keypad
 char keymap[ROW][COL] = {
   {'1', '2', '3', 'A'},
@@ -43,7 +51,7 @@ char keymap[ROW][COL] = {
 byte pin_R[ROW] = {6, 7, 8, 9};
 byte pin_C[COL] = {10, 11, 12, 13};
 
-String valid_key = "AB123";
+String valid_key = "12312";
 char clr_key = 'C';
 String entered_key = "00000";
 int num_keys = 0;
@@ -67,6 +75,10 @@ void setup(){
 
     // Emergency Unlock button set to INPUT
     pinMode(UNLOCK_BTN, INPUT);
+
+    // Stepper Motor Driver STEP and DIR as OUTPUTs
+    pinMode(STEP, OUTPUT);
+    pinMode(DIR, OUTPUT);
     
     // LCD Initialization
     lcd.init();
@@ -97,36 +109,36 @@ void loop(){
           // Check if Unlocked (0)
           if (l_flag == 0){
               Serial.println("Entered Key... Valid! Locking Door...");
-              scrWrite("Entered Key... Valid!    ", "Locking Door...");
-              //stepper_turn
-              scrWrite("       Door      ", "    Locked!      ");
+              scrWrite("Key is...Valid!", "Locking Door...");
+              stepTurn(STEPS_REQ, 1, M_SPEED);
+              scrWrite("       Door    ", "    Locked!    ");
               l_flag = 1; // Locked
               delay(2000);
               relay_pos(0);   // Set signal to LO
-              scrWrite("Enter Key      ", "_____              ");
+              scrWrite("Enter Key      ", "_____          ");
           }
   
           // Check if Locked (1)
           else if (l_flag == 1){
               Serial.println("Entered Key... Valid. Unlocking Door...");
-              scrWrite("Entered Key... Valid!  ", "Unlocking Door...");
-              //stepper_turn
+              scrWrite("Key is...Valid!", "Unlocking Door...");
+              stepTurn(STEPS_REQ, 0, M_SPEED);
               Serial.println("Door Unlocked.   ");
-              scrWrite("     Door     ", "        Unlocked!     ");
+              scrWrite("     Door     ", "   Unlocked!   ");
               l_flag = 0;
               delay(2000);
               relay_pos(0);   // Set signal to LO
-              scrWrite("Enter Key     ", "_____            ");
+              scrWrite("Enter Key     ", "_____          ");
           }
       }
   
       // Check if key recieved is the Clear key 'C'
       else if (key_r == clr_key){
           Serial.println("Key cleared!");
-          scrWrite("        Key      ","     Cleared     ");
+          scrWrite("     Key    ","    Cleared    ");
           delay(2000);
           relay_pos(0);     // Set signal to LO
-          scrWrite("Enter Key      ", "_____            ");
+          scrWrite("Enter Key      ", "_____          ");
           entered_key = "00000";
           num_keys = 0;
       }
@@ -136,10 +148,10 @@ void loop(){
           entered_key = "00000";
           num_keys = 0;
           Serial.println("Invalid Key. Try again...");
-          scrWrite("Incorrect Key. ","Try again...   ");
+          scrWrite("Incorrect Key! ","Try again...");
           delay(2000);
           relay_pos(0);     // Set signal to LO
-          scrWrite("Enter Key       ", "_____           ");
+          scrWrite("Enter Key      ", "_____          ");
       }
   }
   
@@ -156,10 +168,10 @@ void loop(){
   
     // Check if the lock flag is 0
     if (l_flag == 0){
-      scrWrite("   Locking...     ", "     Door     ");
+      scrWrite("   Locking...  ", "     Door     ");
       relay_pos(1); // Set the signal HI
       delay(2000);
-      //stepper
+      stepTurn(STEPS_REQ, 1, M_SPEED);
       delay(2000);
       relay_pos(0); // Set the signal LO
       scrWrite("Enter Key     ", "_____          ");
@@ -169,13 +181,13 @@ void loop(){
   
     // Check if the lock flag is 1
     else if (l_flag == 1){
-      scrWrite("   Unlocking...    ", "    Door    ");
+      scrWrite(" Unlocking...  ", "    Door    ");
       relay_pos(1);  // Set the signal HI
       delay(2000);
-      //stepper
+      stepTurn(STEPS_REQ, 0, M_SPEED);
       delay(2000);
       relay_pos(0);  // Set the signal LO
-      scrWrite("Enter Key           ", "_____           ");
+      scrWrite("Enter Key      ", "_____          ");
       l_flag = 0;
       num_keys = 0;
     }
@@ -208,6 +220,18 @@ void relay_pos(int state){
   }
 }
 
+void stepTurn(int rev, int dir, int speed_m)
+{
+  digitalWrite(DIR, dir); // 1 for CW and 0 for CCW
+
+  for (int x = 0; x < rev; x++)
+  {
+    digitalWrite(STEP, HIGH);
+    delayMicroseconds(speed_m); // Increase delay for slower rotation
+    digitalWrite(STEP, LOW);
+    delayMicroseconds(speed_m);
+  }
+}
 
 
 
