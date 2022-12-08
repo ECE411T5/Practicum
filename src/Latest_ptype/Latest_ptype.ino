@@ -3,9 +3,13 @@
  *          Mohamed Ashkanani
  *          Ibrahim Binmahfood
  * 
+ * Inspiration:
+ * https://github.com/camdeno/ECE-411-Team-5
+ * 
  * NOTE: status_btn which is output from UNLOCK_BTN pin on PCB is 
  * supposed to be a pull down resistor rather than pull up.
  */
+ 
 #include <LiquidCrystal_I2C.h> // Frank de Brabander's LiquidCrystal_I2C v1.1.2
 #include <Keypad.h>
 
